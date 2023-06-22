@@ -1,5 +1,5 @@
 `include "def.v"
-module one_comp(input in_data, output out_data);
+module one_comp(input clk,rst,in_data, output out_data);
    reg out_data;
   always@(posedge clk or negedge rst)
      begin
