@@ -7,9 +7,17 @@ module one_comptb;
     #5 rst = 1'b1; in_data =1'b1;
     #10 in_data = 1'b0;
     #10 in_data = 1'b1;
+    #10 in_data = 1'b0;
+    #10 in_data = 1'b1;
+    #10 in_data = 1'b1;
+    #10 in_data = 1'b1;
+    #10 in_data = 1'b0;
+    #10 in_data = 1'b1;
+    #10 in_data = 1'b0;
+    #10 in_data = 1'b1;
   end
   initial begin
     $monitor("clk = %0d, in_data = %0d,out_data = %0d" ,clk,in_data,out_data); 
-    #60 $finish;
+    #150 $finish;
   end
 endmodule
