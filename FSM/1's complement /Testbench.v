@@ -1,5 +1,5 @@
 module one_comptb;
-  reg in_data;
+  reg clk,rst,in_data;
   always #5 clk = ~clk;
   one_comp DUT(clk,rst,in_data,out_data);
   initial begin
