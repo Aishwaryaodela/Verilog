@@ -1,3 +1,4 @@
+`include "def.v"
 module one_comp(input in_data, output out_data);
    reg out_data;
   always@(posedge clk or negedge rst)
@@ -10,21 +11,21 @@ module one_comp(input in_data, output out_data);
   always@(state)
     begin 
       case(state)
-        `IDLE : next_state = `s0;
-          `s0 : begin
+        `IDLE : next_state = `S0;
+          `S0 : begin
              case(in_data)     
-                   1'b1 : next_state = `s0;
-                   1'b0 : next_state = `s1;
+                   1'b1 : next_state = `S0;
+                   1'b0 : next_state = `S1;
                 default : next_state = `IDLE;
              endcase
                 end         
-          `s1 : begin
+          `S1 : begin
              case(in_data)
-                1'b1 : next_state = `s0;
-                1'b0 : next_state = `s1;
+                1'b1 : next_state = `S0;
+                1'b0 : next_state = `S1;
                 default : next_state = `IDLE;
                 endcase
                 end
         end
-         assign out_data = (state == `s0) ? ((in_data == 1) ? 0 : 1) : ((in_data == 1) ? 0 : 1);
+         assign out_data = (state == `S0) ? ((in_data== 1) ? 0 : 1) : ((in_data == 1) ? 0 : 1);
 endmodule
