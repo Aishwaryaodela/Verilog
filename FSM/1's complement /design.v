@@ -1,6 +1,7 @@
 `include "def.v"
 module one_comp(input clk,rst,in_data, output out_data);
    reg out_data;
+   reg state,next_state;
   always@(posedge clk or negedge rst)
      begin
        if(!rst)
