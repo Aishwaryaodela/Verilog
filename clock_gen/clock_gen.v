@@ -7,4 +7,4 @@ module clock_gen();
        forever #30 clk = ~clk;
     end
   initial #1000 $finish;
-endmodule
+ endmodule
